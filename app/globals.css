@@ -1,26 +1,214 @@
 @import "tailwindcss";
 
+/* Tema Claro */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Cores de Fundo */
+  --background: #FFFFFF;
+  --footer-bg: #F9FFFE;
+  --navbar-bg: #FFFFFF;
+  --key-features-bg: #346C60;
+  --hero-gradient-from: #FBFBFB;
+  --hero-gradient-to: #DCEFEB;
+  --hero-underline-color: #ABDCD2;
+  
+  /* Tipografia */
+  --foreground: #262626;
+  --text-heading: #212121;
+  --text-on-dark: #DCEFEB;
+  --key-features-text: #DCEFEB;
+  
+  /* Cores Primárias */
+  --primary: #346C60;
+  
+  /* Cards */
+  --card-gradient-from: #1D1E20;
+  --card-gradient-to: #02100D;
+  
+  /* Botões */
+  --btn-primary-bg: #1D1E20;
+  --btn-primary-text: #EDEEF0;
+  
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #31373D;
+  --btn-secondary-border: #CDD3DB;
 }
 
 @theme inline {
+  /* Cores de fundo */
   --color-background: var(--background);
+  --color-footer: var(--footer-bg);
+  --color-navbar-bg: var(--navbar-bg);
+  --color-key-features-bg: var(--key-features-bg);
+  --color-hero-gradient-from: var(--hero-gradient-from);
+  --color-hero-gradient-to: var(--hero-gradient-to);
+  --color-hero-underline: var(--hero-underline-color);
+  
+  /* Tipografia */
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-heading: var(--text-heading);
+  --color-text-on-dark: var(--text-on-dark);
+  --color-key-features-text: var(--key-features-text);
+  
+  /* Cores primárias */
+  --color-primary: var(--primary);
+  
+  /* Cards */
+  --color-card-gradient-from: var(--card-gradient-from);
+  --color-card-gradient-to: var(--card-gradient-to);
+  
+  /* Botões */
+  --color-btn-primary-bg: var(--btn-primary-bg);
+  --color-btn-primary-text: var(--btn-primary-text);
+  
+  --color-btn-secondary-bg: var(--btn-secondary-bg);
+  --color-btn-secondary-text: var(--btn-secondary-text);
+  --color-btn-secondary-border: var(--btn-secondary-border);
+  
+  /* Fontes */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-hero: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+/* Tema Escuro */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  :root:not(.light) {
+    /* Cores de Fundo */
+    --background: #14231F;
+    --footer-bg: #1A2D28;
+    --navbar-bg: #212121;
+    --key-features-bg: #1D1E20;
+    --hero-gradient-from: #1D1E20;
+    --hero-gradient-to: #102722;
+    --hero-underline-color: #376C61;
+    
+    /* Tipografia */
+    --foreground: #FFFFFF;
+    --text-heading: #FFFFFF;
+    --text-on-dark: #DCEFEB;
+    --key-features-text: #DCEFEB;
+    
+    /* Cores Primárias */
+    --primary: #346C60;
+    
+    /* Cards */
+    --card-gradient-from: #1D1E20;
+    --card-gradient-to: #102722;
+    
+    /* Botões */
+    --btn-primary-bg: #346C60;
+    --btn-primary-text: #EDEEF0;
+    
+    --btn-secondary-bg: transparent;
+    --btn-secondary-text: #FFFFFF;
+    --btn-secondary-border: #CDD3DB;
   }
+}
+
+/* Tema Escuro Forçado */
+:root.dark {
+  /* Cores de Fundo */
+  --background: #14231F;
+  --footer-bg: #1A2D28;
+  --navbar-bg: #212121;
+  --key-features-bg: #1D1E20;
+  --hero-gradient-from: #1D1E20;
+  --hero-gradient-to: #102722;
+  --hero-underline-color: #376C61;
+  
+  /* Tipografia */
+  --foreground: #FFFFFF;
+  --text-heading: #FFFFFF;
+  --text-on-dark: #DCEFEB;
+  --key-features-text: #DCEFEB;
+  
+  /* Cores Primárias */
+  --primary: #346C60;
+  
+  /* Cards */
+  --card-gradient-from: #1D1E20;
+  --card-gradient-to: #102722;
+  
+  /* Botões */
+  --btn-primary-bg: #346C60;
+  --btn-primary-text: #EDEEF0;
+  
+  --btn-secondary-bg: transparent;
+  --btn-secondary-text: #FFFFFF;
+  --btn-secondary-border: #CDD3DB;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Logo filters */
+.logo-filter {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(95%) contrast(92%);
+}
+
+:root.dark .logo-filter {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Team icon filters */
+.team-icon-filter {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(0%) saturate(0%) hue-rotate(180deg) brightness(95%) contrast(92%);
+}
+
+:root.dark .team-icon-filter {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* Hero Section */
+.hero-gradient {
+  background: linear-gradient(to right, var(--hero-gradient-from) 47%, var(--hero-gradient-to) 100%);
+}
+
+.hero-title {
+  font-family: var(--font-hero);
+}
+
+.hero-underline {
+  background-image: linear-gradient(transparent 70%, var(--hero-underline-color) 70%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  display: inline;
+}
+
+/* Blog Post CTA Section */
+.cta-section {
+  margin: 2.5rem 0;
+  text-align: center;
+}
+
+.cta-text {
+  margin: 0 0 1.5rem 0;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--foreground);
+}
+
+.cta-btn {
+  display: inline-block;
+  background: var(--btn-primary-bg);
+  color: var(--btn-primary-text);
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+}
+
+.author-line {
+  color: var(--foreground) !important;
+  opacity: 0.8;
+  font-size: 1rem !important;
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
