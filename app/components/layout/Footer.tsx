@@ -84,12 +84,36 @@ export function Footer() {
                             <ul className="space-y-3">
                                 {footerLinks.license.map((link) => (
                                     <li key={link.label}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-sm text-foreground/70 hover:text-foreground transition-colors"
-                                        >
-                                            {link.label}
-                                        </Link>
+                                        {'external' in link && link.external ? (
+                                            <a
+                                                href={link.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-sm text-foreground/70 hover:text-foreground transition-colors inline-flex items-center gap-1"
+                                            >
+                                                {link.label}
+                                                <svg
+                                                    className="h-3 w-3"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth={2}
+                                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className="text-sm text-foreground/70 hover:text-foreground transition-colors"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        )}
                                     </li>
                                 ))}
                             </ul>
@@ -111,12 +135,36 @@ export function Footer() {
                             <div className="flex items-center gap-4 text-sm">
                                 {footerLinks.legal.map((link, index) => (
                                     <React.Fragment key={link.label}>
-                                        <Link
-                                            href={link.href}
-                                            className="text-foreground/50 hover:text-foreground transition-colors"
-                                        >
-                                            {link.label}
-                                        </Link>
+                                        {'external' in link && link.external ? (
+                                            <a
+                                                href={link.href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-foreground/50 hover:text-foreground transition-colors inline-flex items-center gap-1"
+                                            >
+                                                {link.label}
+                                                <svg
+                                                    className="h-3 w-3"
+                                                    fill="none"
+                                                    stroke="currentColor"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth={2}
+                                                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                                    />
+                                                </svg>
+                                            </a>
+                                        ) : (
+                                            <Link
+                                                href={link.href}
+                                                className="text-foreground/50 hover:text-foreground transition-colors"
+                                            >
+                                                {link.label}
+                                            </Link>
+                                        )}
                                         {index < footerLinks.legal.length - 1 && (
                                             <span className="text-foreground/30">|</span>
                                         )}
