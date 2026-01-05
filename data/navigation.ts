@@ -37,24 +37,28 @@ export const mainNavigation: NavigationLink[] = [
 ];
 
 /**
+ * Hero navigation links
+ * Displayed in the hero and used throughout the site
+ */
+export const heroLinks = {
+    readTheDocs: "https://github.com/vinteumorg/Floresta/tree/master/doc",
+    contribute: "https://github.com/vinteumorg/Floresta/blob/master/CONTRIBUTING.md"
+};
+
+/**
  * Community links
  * External links to social platforms and chat communities
  */
 export const communityLinks: ExternalLink[] = [
     { 
-        label: "Twitter", 
-        href: "#", // TODO: Add Twitter link when available
-        external: true
-    },
-    { 
         label: "Nostr", 
-        href: "#",  // TODO: Add Nostr link when available
+        href: "https://njump.me/npub1xf37jpft8s3tk7c84zsrpavz0xvslswcwly03q4fuq32p9rws70sgp8kjh",
         external: true
     },
     { 
         label: "Discord", 
-        href: "#",  // TODO: Add Discord invite link when available
-        external: true
+        href: "https://discord.gg/gTurqMNh",
+        external: true 
     }
 ];
 
@@ -64,13 +68,12 @@ export const communityLinks: ExternalLink[] = [
  */
 export const footerLinks = {
     license: [
-        { label: "PGP Keys", href: "#" },  // TODO: Add PGP Keys link when available
+        { label: "PGP Keys", href: "https://blog.dlsouza.lol/assets/gpg.asc", external: true },
         { label: "Team", href: "/team" },
-        { label: "Documentation", href: "#" } // TODO: Add Documentation link when available
+        { label: "Documentation", href: "https://github.com/vinteumorg/Floresta/tree/master/doc", external: true }
     ],
     legal: [
-        { label: "Terms & Conditions", href: "#" }, // TODO: Add Terms & Conditions link when available
-        { label: "Privacy Policy", href: "#" } // TODO: Add Privacy Policy link when available
+        { label: "License", href: "https://github.com/vinteumorg/Floresta/blob/master/LICENSE", external: true },
     ]
 };
 
@@ -79,9 +82,7 @@ export const footerLinks = {
  * Used for social icons in footer
  */
 export const socialLinks = {
-    twitter: "#",   // TODO: Add Twitter link when available
-    dribbble: "#",  // TODO: Add Dribbble link when available
-    linkedin: "#"   // TODO: Add LinkedIn link when available
+    discord: "https://discord.gg/gTurqMNh"
 };
 
 /**
@@ -89,7 +90,7 @@ export const socialLinks = {
  * Primary action buttons throughout the site
  */
 export const ctaLinks = {
-    docs: "#",  // TODO: Add documentation URL when available
-    github: "#", // TODO: Add GitHub repository URL when available
-    contribute: "#" // TODO: Add contribution guide URL when available
+    docs: "https://github.com/vinteumorg/Floresta/tree/master/doc",
+    github: "https://github.com/getfloresta",
+    contribute: "https://github.com/vinteumorg/Floresta/blob/master/CONTRIBUTING.md"
 };
