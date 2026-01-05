@@ -27,7 +27,7 @@ export function TeamMembersSection() {
                         title="No team members yet"
                         description="Be the first to join the team! Check out our"
                         linkText="contribution guide"
-                        linkUrl="#"
+                        linkUrl="https://github.com/cristiansolutchak/floresta-site/blob/main/CONTRIBUTING.md"
                     />
                 ) : (
                     /* Render each team member card */
