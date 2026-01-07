@@ -83,6 +83,13 @@ export function Navbar() {
                                 Team
                             </Link>
 
+                            <Link
+                                href="/blog"
+                                className="text-sm font-medium text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current underline-offset-4"
+                            >
+                                Blog
+                            </Link>
+
                             {/* Community Dropdown Menu */}
                             <div className="relative group">
                                 {/* Dropdown trigger button */}
@@ -120,13 +127,6 @@ export function Navbar() {
                                     </div>
                                 </div>
                             </div>
-
-                            <Link
-                                href="/blog"
-                                className="text-sm font-medium text-foreground hover:text-primary transition-colors underline decoration-transparent hover:decoration-current underline-offset-4"
-                            >
-                                Blog
-                            </Link>
                         </div>
                     </div>
 
@@ -196,21 +196,6 @@ export function Navbar() {
                                 Team
                             </Link>
 
-                            <div className="flex flex-col gap-2 pl-4">
-                                <span className="text-sm font-medium text-foreground/60">Community</span>
-                                {communityLinks.map((link) => (
-                                    <a
-                                        key={link.label}
-                                        href={link.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-sm text-foreground hover:text-primary transition-colors"
-                                    >
-                                        {link.label}
-                                    </a>
-                                ))}
-                            </div>
-
                             <Link
                                 href="/blog"
                                 className="text-sm font-medium text-foreground hover:text-primary transition-colors"
@@ -218,6 +203,23 @@ export function Navbar() {
                             >
                                 Blog
                             </Link>
+
+                            <div className="border-t border-foreground/5 pt-4">
+                                <span className="text-sm font-medium text-foreground/60 block mb-2">Community</span>
+                                <div className="flex flex-col gap-3">
+                                    {communityLinks.map((link) => (
+                                        <a
+                                            key={link.label}
+                                            href={link.href}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-sm font-medium text-foreground hover:text-primary transition-colors"
+                                        >
+                                            {link.label}
+                                        </a>
+                                    ))}
+                                </div>
+                            </div>
 
                             <div className="flex flex-col gap-2 pt-4 border-t border-foreground/5">
                                 <Button variant="secondary" className="text-sm w-full" href={ctaLinks.docs}>
