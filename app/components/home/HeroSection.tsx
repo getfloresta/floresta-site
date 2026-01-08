@@ -44,7 +44,7 @@ export function HeroSection() {
                             A lightweight and embeddable
                         </span>
                         <span className="hero-underline">
-                            Bitcoin client, built for soverignity.
+                            Bitcoin client, built for sovereignty.
                         </span>
                     </h1>
 

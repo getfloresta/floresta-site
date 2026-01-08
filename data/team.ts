@@ -31,6 +31,7 @@ export interface SocialLinks {
     github?: string;
     email?: string;
     discord?: string;
+    nostr?: string;
     blog?: string;
 }
 
@@ -48,6 +49,7 @@ export const teamMembers: TeamMember[] = [
             github: "https://github.com/Davidson-Souza",
             x: "https://x.com/Erik17192799",
             email: "mailto:me@dlsouza.dev",
+            nostr: "https://njump.me/npub1ur8m24ya8nmakn38xmuwr0yy7cjgdtm6gy54mpnudgcngkgyy55qxc58yl",
             blog: "https://blog.dlsouza.lol",
         }
     },
@@ -67,6 +69,30 @@ export const teamMembers: TeamMember[] = [
             github: "https://github.com/jaoleal",
             x: "https://x.com/jaoleall",
             email: "mailto:jgleal@protonmail.com",
+        }
+    },
+    {
+        name: "JoseSK999",
+        description: "Rust developer focused on security, performance, and privacy. Works on Bitcoin stuff, explored Witnessless Sync, background in FHE, and likes nerding out about physics.",
+        socialLinks: {
+            github: "https://github.com/JoseSK999",
+            x: "https://x.com/JoseSK999",
+        }
+    },
+    {
+        name: "Qlrd",
+        description: "",
+        socialLinks: {
+            github: "https://github.com/qlrd",
+            x: "https://x.com/qlrddev",
+        }
+    },
+    {
+        name: "Luis Schwab",
+        description: "",
+        socialLinks: {
+            github: "https://github.com/luisschwab",
+            blog: "https://luisschwab.net/",
         }
     },
 ];

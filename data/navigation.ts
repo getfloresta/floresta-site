@@ -41,7 +41,7 @@ export const mainNavigation: NavigationLink[] = [
  * Displayed in the hero and used throughout the site
  */
 export const heroLinks = {
-    readTheDocs: "https://github.com/vinteumorg/Floresta/tree/master/doc",
+    readTheDocs: "https://docs.getfloresta.sh",
     contribute: "https://github.com/vinteumorg/Floresta/blob/master/CONTRIBUTING.md"
 };
 
@@ -75,7 +75,7 @@ export const footerLinks = {
     license: [
         { label: "PGP Keys", href: "https://blog.dlsouza.lol/assets/gpg.asc", external: true },
         { label: "Team", href: "/team" },
-        { label: "Documentation", href: "https://github.com/vinteumorg/Floresta/tree/master/doc", external: true }
+        { label: "Documentation", href: "https://docs.getfloresta.sh", external: true }
     ],
     legal: [
         { label: "License", href: "https://github.com/vinteumorg/Floresta/blob/master/LICENSE", external: true },
@@ -95,7 +95,7 @@ export const socialLinks = {
  * Primary action buttons throughout the site
  */
 export const ctaLinks = {
-    docs: "https://github.com/vinteumorg/Floresta/tree/master/doc",
+    docs: "https://docs.getfloresta.sh",
     github: "https://github.com/getfloresta",
     contribute: "https://github.com/vinteumorg/Floresta/blob/master/CONTRIBUTING.md"
 };
