@@ -18,6 +18,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { getPostBySlug, getAllPostSlugs } from "../../../../lib/posts";
 import { MarkdownContent } from "../../../components/blog/MarkdownContent";
 import { notFound } from "next/navigation";
@@ -26,6 +27,54 @@ interface BlogPostPageParams {
     params: Promise<{
         slug: string;
     }>;
+}
+
+/**
+ * Generate dynamic metadata for each blog post
+ * This ensures proper Open Graph and Twitter Card metadata for social sharing
+ */
+export async function generateMetadata({ params }: BlogPostPageParams): Promise<Metadata> {
+    const { slug } = await params;
+    const post = getPostBySlug(slug);
+
+    if (!post) {
+        return {
+            title: "Post não encontrado",
+        };
+    }
+
+    const postUrl = `https://www.getfloresta.org/blog/${slug}`;
+    const imageUrl = post.image.startsWith('http')
+        ? post.image
+        : `https://www.getfloresta.org${post.image}`;
+
+    return {
+        title: post.title,
+        description: post.excerpt,
+        openGraph: {
+            title: post.title,
+            description: post.excerpt,
+            type: "article",
+            url: postUrl,
+            publishedTime: post.date,
+            authors: [post.author],
+            tags: post.tags,
+            images: [
+                {
+                    url: imageUrl,
+                    width: 1200,
+                    height: 630,
+                    alt: post.title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title,
+            description: post.excerpt,
+            images: [imageUrl],
+        },
+    };
 }
 
 /**
