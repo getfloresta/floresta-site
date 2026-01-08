@@ -39,9 +39,6 @@ export function KeyFeaturesSection() {
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-key-features-text mb-6">
                         Key Features.
                     </h2>
-                    <p className="text-lg md:text-xl text-key-features-text/80 max-w-2xl">
-                        And it's all powered by Utreexo - the cryptographic accumulator for teams that want to run Bitcoin nodes efficiently.
-                    </p>
                 </div>
 
                 {/* Feature cards grid - responsive layout */}

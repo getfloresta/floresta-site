@@ -34,12 +34,12 @@ export function FeatureCard({ icon, title, description }: FeatureCardProps) {
             </div>
 
             {/* Card body with gradient background */}
-            <div className="bg-gradient-to-b from-[#1D1E20]/[0.54] to-card-gradient-to rounded-3xl p-8 pt-25 h-[400px] flex flex-col">
-                <h3 className="text-[28px] md:text-[32px] font-bold text-white mb-4">
+            <div className="bg-gradient-to-b from-[#1D1E20]/[0.54] to-card-gradient-to rounded-3xl p-8 pt-25 h-[320px] md:h-[380px] lg:h-[400px] flex flex-col overflow-hidden">
+                <h3 className="text-lg md:text-xl lg:text-2xl xl:text-[28px] font-bold text-white mb-4 max-h-[4.5em] overflow-hidden">
                     {title}
                 </h3>
 
-                <p className="text-white/80 text-[17px] leading-relaxed">
+                <p className="text-white/80 text-sm md:text-[15px] lg:text-[17px] leading-relaxed line-clamp-6 overflow-hidden">
                     {description}
                 </p>
             </div>
