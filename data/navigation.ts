@@ -59,6 +59,11 @@ export const communityLinks: ExternalLink[] = [
         label: "Discord", 
         href: "https://discord.gg/gTurqMNh",
         external: true 
+    },
+    { 
+        label: "X",
+        href: "http://x.com/getfloresta",
+        external: true 
     }
 ];
 

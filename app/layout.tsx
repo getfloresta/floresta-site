@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Floresta - Bitcoin Full Node in Rust",
-  description: "A lightweight Bitcoin full node implementation written in Rust",
+  title: "A Lightweight and Embeddable Bitcoin Client",
+  description: "A lightweight and embeddable Bitcoin client designed for full validation, sovereignty, and easy integration into applications.",
 };
 
 export default function RootLayout({
