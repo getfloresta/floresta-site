@@ -39,17 +39,18 @@ export function HeroSection() {
             <div className="relative mx-auto max-w-7xl px-6 py-32 md:py-40 lg:py-48">
                 <div className="flex flex-col items-center text-center">
                     {/* Main hero title with custom font and underline effect */}
-                    <h1 className="hero-title text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-heading leading-tight mb-8">
-                        <span className="block">A lightweight, fast, and</span>
-                        {/* The hero-underline class adds the decorative SVG underline */}
+                    <h1 className="hero-title text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-heading leading-tight mb-8 max-w-[90%] lg:max-w-[95%]">
+                        <span className="block">
+                            A lightweight and embeddable
+                        </span>
                         <span className="hero-underline">
-                            sovereign Bitcoin full node.
+                            Bitcoin client, built for soverignity.
                         </span>
                     </h1>
 
                     {/* Tagline emphasizing key technologies */}
                     <p className="text-xl md:text-2xl text-foreground/70 mb-10">
-                        Powered by Utreexo. Written in Rust.
+                        Full validation without the overhead.
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4">

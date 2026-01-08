@@ -42,15 +42,15 @@ export function WhyFlorestaSection() {
 
                         <div className="space-y-6 text-foreground/90 text-base md:text-lg leading-relaxed max-w-4xl">
                             <p>
-                                Running your own Bitcoin full node is essential for verifying your own transactions, preserving the network's decentralization, and maintaining financial sovereignty.
+                                Running your own fully validating Bitcoin node is essential for verifying your own transactions, preserving the network’s decentralization, and maintaining financial sovereignty.
                             </p>
 
                             <p>
-                                But traditional nodes require hundreds of gigabytes of disk space and constant uptime — resources not everyone has.
+                                Traditional node implementations often require hundreds of gigabytes of disk space and constant uptime, which can be a barrier for many users.
                             </p>
 
                             <p>
-                                Floresta leverages Utreexo, a cryptographic accumulator based on Merkle trees, to compress the Bitcoin state. This allows you to run a fully validating node on modest hardware, without compromising on trust or security.
+                                Floresta makes this accessible by providing a lightweight and embeddable Bitcoin client, built on techniques such as Utreexo and pruning. This design allows users and applications to run a fully validating node on modest hardware, without compromising on trust or security.
                             </p>
                         </div>
                     </div>
@@ -59,3 +59,4 @@ export function WhyFlorestaSection() {
         </section>
     );
 }
+
