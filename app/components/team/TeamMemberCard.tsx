@@ -7,11 +7,12 @@
  * - Indicator icon next to name
  * - Member name with large typography
  * - Description/bio text
- * - Social media links (LinkedIn, X/Twitter, YouTube)
+ * - Social media links (LinkedIn, X/Twitter, YouTube, GitHub, Email, Discord, Blog)
  * - Theme-aware social icons with hover effects
  * 
  * Social Links:
  * - Only renders icons for provided social links
+ * - Supports: LinkedIn, X/Twitter, YouTube, GitHub, Email, Discord, Blog
  * - Uses team-icon-filter CSS class for theme adaptation
  */
 
@@ -22,6 +23,10 @@ interface SocialLinks {
     linkedin?: string;  // LinkedIn profile URL (optional)
     x?: string;         // X (Twitter) profile URL (optional)
     youtube?: string;   // YouTube channel URL (optional)
+    github?: string;    // GitHub profile URL (optional)
+    email?: string;     // Email address (optional)
+    discord?: string;   // Discord username (optional)
+    blog?: string;      // Blog/website URL (optional)
 }
 
 interface TeamMemberProps {
@@ -36,6 +41,10 @@ export function TeamMemberCard({ name, description, socialLinks }: TeamMemberPro
         { key: 'linkedin', icon: '/images/icons/team/linkedin.svg', url: socialLinks?.linkedin },
         { key: 'x', icon: '/images/icons/team/x.svg', url: socialLinks?.x },
         { key: 'youtube', icon: '/images/icons/team/youtube.svg', url: socialLinks?.youtube },
+        { key: 'github', icon: '/images/icons/team/github.svg', url: socialLinks?.github },
+        { key: 'email', icon: '/images/icons/team/email.svg', url: socialLinks?.email ? `mailto:${socialLinks.email}` : undefined },
+        { key: 'discord', icon: '/images/icons/team/discord.svg', url: socialLinks?.discord },
+        { key: 'blog', icon: '/images/icons/team/blog.svg', url: socialLinks?.blog },
     ];
 
     return (
