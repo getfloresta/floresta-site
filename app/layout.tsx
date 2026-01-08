@@ -10,8 +10,27 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "A Lightweight and Embeddable Bitcoin Client",
+  title: "Floresta - A Lightweight and Embeddable Bitcoin Client",
   description: "A lightweight and embeddable Bitcoin client designed for full validation, sovereignty, and easy integration into applications.",
+  openGraph: {
+    title: "Floresta - A Lightweight and Embeddable Bitcoin Client",
+    description: "A lightweight and embeddable Bitcoin client designed for full validation, sovereignty, and easy integration into applications.",
+    images: [
+      {
+        url: "/images/thumbnail/tumb.png",
+        width: 1200,
+        height: 630,
+        alt: "Floresta Bitcoin Client",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Floresta - A Lightweight and Embeddable Bitcoin Client",
+    description: "A lightweight and embeddable Bitcoin client designed for full validation, sovereignty, and easy integration into applications.",
+    images: ["/images/thumbnail/tumb.png"],
+  },
 };
 
 export default function RootLayout({
