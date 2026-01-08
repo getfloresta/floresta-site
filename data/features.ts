@@ -33,22 +33,22 @@ export interface Feature {
 export const features: Feature[] = [
     {
         icon: "/images/illustrations/3d/lightweight.png",
-        title: "Lightweight and fast",
-        description: "Uses Utreexo to eliminate the need for storing the full UTXO set locally"
+        title: "Lightweight and efficient",
+        description: "Reduces resource requirements for full Bitcoin validation."
     },
     {
         icon: "/images/illustrations/3d/modular.png",
-        title: "Structure Modular",
-        description: "Memory-safe and fast by design"
+        title: "Modular by design",
+        description: "Reusable client components for embedding or standalone deployments."
     },
     {
         icon: "/images/illustrations/3d/settings.png",
-        title: "Built in Rust",
-        description: "Validates blocks using the same consensus rules"
+        title: "Advanced validation",
+        description: "Implements modern and experimental Bitcoin validation techniques like PoW Fraud Proofs, SwiftSync, and Utreexo."
     },
     {
         icon: "/images/illustrations/3d/bitcoin-check.png",
-        title: "Compatible Bitcoin Core",
-        description: "Ideal for integration into wallets, explorers, or research projects"
+        title: "Bitcoin Core API compatible",
+        description: "Exposes APIs compatible with Bitcoin Core for easier integration into existing tools and applications."
     }
 ];
