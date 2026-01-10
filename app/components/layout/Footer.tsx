@@ -126,7 +126,7 @@ export function Footer() {
                     <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
                         {/* Copyright Text */}
                         <p className="text-sm text-foreground/50">
-                            © 2025 Floresta. All rights reserved.
+                            &copy; {new Date().getFullYear()} Floresta. All rights reserved.
                         </p>
 
                         {/* Legal Links and Social Icons */}
