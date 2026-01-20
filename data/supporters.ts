@@ -6,7 +6,7 @@
  * Data is organized by year, with most recent year first.
  * 
  * Logo Requirements:
- * - Logos must be placed in /public/images/icons/supportes/{light|dark}/
+ * - Logos must be placed in /public/images/icons/supporters/{light|dark}/
  * - Provide both light and dark versions for theme compatibility
  * - Use SVG format for best quality and scalability
  * - Filename must match the 'logo' field (e.g., "vinteum.svg")
@@ -53,6 +53,11 @@ export const supportersData: YearSupporters[] = [
                 name: "OpenSats",
                 logo: "opensats.svg",
                 url: "https://opensats.org"
+            },
+            {
+                name: "BitcoinDevKit",
+                logo: "bitcoindevkit.svg",
+                url: "https://bitcoindevkit.org"
             }
         ]
     },
@@ -68,6 +73,11 @@ export const supportersData: YearSupporters[] = [
                 name: "OpenSats",
                 logo: "opensats.svg",
                 url: "https://opensats.org"
+            },
+            {
+                name: "BitcoinDevKit",
+                logo: "bitcoindevkit.svg",
+                url: "https://bitcoindevkit.org"
             }
         ]
     },

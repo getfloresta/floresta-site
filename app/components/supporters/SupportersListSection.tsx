@@ -15,7 +15,7 @@
  * To add/edit supporters, modify the data/supporters.ts file
  * 
  * Logo Path Convention:
- * /images/icons/supportes/{light|dark}/{logo}.svg
+ * /images/icons/supporters/{light|dark}/{logo}.svg
  */
 
 "use client";
@@ -63,7 +63,7 @@ export function SupportersListSection() {
                                             >
                                                 {/* Theme-aware logo - switches between light/dark versions */}
                                                 <Image
-                                                    src={`/images/icons/supportes/${isDark ? 'dark' : 'light'}/${supporter.logo}`}
+                                                    src={`/images/icons/supporters/${isDark ? 'dark' : 'light'}/${supporter.logo}`}
                                                     alt={supporter.name}
                                                     width={200}
                                                     height={60}
