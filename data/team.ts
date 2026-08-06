@@ -1,13 +1,13 @@
 /**
  * Team Members Data
- * 
+ *
  * Central data source for all team member information.
- * 
+ *
  * To add a new team member:
  * 1. Add a new object to the teamMembers array
  * 2. Include name, description, and optional socialLinks
  * 3. Social links support: linkedin, x (Twitter), youtube, github, email, discord, blog
- * 
+ *
  * Example:
  * {
  *   name: "John Doe",
@@ -92,14 +92,13 @@ export const teamMembers: TeamMember[] = [
         }
     },
     {
-        name: "qlrd",
-        description: "Floresta and Krux developer. Art teacher. Code Bitcoin as if it were big, eternal music for world change.",
+        name: "Chris G.",
+        description: "Chris blends decades of engineering, technical management and mathematical depth to help make Bitcoin nodes lighter and more accessible, shaping Floresta and its modular architecture.",
         socialLinks: {
-            github: "https://github.com/qlrd",
-            x: "https://x.com/qlrddev",
-            email: "mailto:qlrddev@proton.me",
-            nostr: "https://njump.me/npub1kyglvayh649etnjf2jznlynsrx0uz63vaehuc2pjhwdtj9vph88qyvph68",
-            keybase: "https://keybase.io/qlrd"
+            github: "https://github.com/csgui",
+            x: "https://x.com/csgui",
+            email: "mailto:hey@imchris.me",
+            blog: "https://imchris.me"
         }
     },
 ];
