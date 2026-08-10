@@ -3,7 +3,7 @@ title: "Floresta Roadmap 2026: From Building Capabilities to Hardening the Node"
 author: "Chris G."
 date: "2026-08-07"
 tags: ["roadmap", "announcement"]
-image: "/images/blog/post3.svg"
+image: "/images/blog/post3.png"
 excerpt: ""
 ---
 
