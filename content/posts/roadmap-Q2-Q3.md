@@ -4,7 +4,7 @@ author: "Chris G."
 date: "2026-08-07"
 tags: ["roadmap", "announcement"]
 image: "/images/blog/post3.png"
-excerpt: ""
+excerpt: "A look back at Floresta's Q2 2026 progress and what's next for Q3: hardening the node through testing, observability and developer experience"
 ---
 
 # Floresta Roadmap 2026: From Building Capabilities to Hardening the Node
