@@ -11,15 +11,33 @@ Floresta v0.10.0 is out!
 
 This release adds SwiftSync support, strengthens consensus validation and expands compatibility with Bitcoin Core’s RPC interface. It also changes a few defaults that node operators should review before upgrading.
 
+## Changes for node operators
+
+First, here are the important changes for those already running Floresta. Please read this section before upgrading.
+
+Starting with v0.10.0, JSON-RPC authentication is enabled by default. The RPC interface gives access to the node and its wallet, and leaving it open was not a reasonable default.
+
+Local clients running under the same user can use cookie authentication without extra configuration. External clients will need credentials. Username and password authentication is supported, including configurations with multiple users. If you have scripts or applications that talk to Floresta over RPC from another user or machine, check that they are configured before you upgrade.
+
+Floresta now writes logs to `debug.log` in the network-specific data directory by default. You can change the location with `--log-file`, or turn file logging off with `--no-log-file`.
+
+We have also introduced options to disable individual services:
+
+- `--disable-rpc`
+- `--disable-electrum`
+- `--disable-zmq` (when built with ZMQ support)
+
+This is useful when Floresta is embedded in another application, or when you simply do not need a given service. Keep in mind that disabling Electrum also stops the watch-only wallet from receiving new blocks. If you enable it again later, you can use `rescan` to catch up.
+
 ## SwiftSync and Utreexo
 
-SwiftSync is a proposed method for speeding up Bitcoin's initial block download (IBD). The node starts from a hints file that tells it which outputs will still be unspent at a given block height. Outputs that are created and spent within that range do not need to be stored and looked up one by one. Instead, they are accounted for in an aggregate that must equal zero when synchronization reaches the end of the range. The hints do not need to be trusted, since incorrect hints cause validation to fail.
+[SwiftSync](https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd) is a proposed method for speeding up Bitcoin's initial block download (IBD). The node starts from a hints file that tells it which outputs will still be unspent at a given block height. Outputs that are created and spent within that range do not need to be stored and looked up one by one. Instead, they are accounted for in an aggregate that must equal zero when synchronization reaches the end of the range. The hints do not need to be trusted, since incorrect hints cause validation to fail.
 
 This fits well with Utreexo. A Utreexo node does not need to store the full UTXO set locally, but it still has to build its accumulator, and with SwiftSync only the outputs that survive need to be added to it. With v0.10.0, Floresta supports SwiftSync with Utreexo accumulator construction.
 
 SwiftSync is used only when a suitable hints file is provided. Without one, the node follows the regular synchronization process, so nothing changes for operators who do not opt in.
 
-We still have a lot to learn about what this combination offers in practice, in terms of synchronization time, storage and computational requirements, especially on modest hardware. Measurements from different machines would help us a lot here.
+We still have a lot to learn about what this combination offers in practice, in terms of synchronization time, storage and computational requirements, especially on modest hardware. Measurements from different machines would help us a lot here. But preliminary results show promising timings, with our current record standing at 19m 45s using a 5Gbps network.
 
 We have also updated the assume-utreexo checkpoints for mainnet and signet. The new mainnet checkpoint is at block 976,679.
 
@@ -39,24 +57,6 @@ This release adds BIP68 relative lock-time enforcement during block validation, 
 On the header side, we worked on the required difficulty bits, testnet minimum-difficulty rules and block-version checks. Other changes address Utreexo proof handling and partial-chain validation.
 
 An independent implementation has to get every one of these rules right, and a missing check is not always obvious until someone goes looking for it. Consensus validation remains the area where we most want more eyes on the code. If you are familiar with Bitcoin consensus rules, and especially if you are interested in independent implementations, reviews and test cases are very welcome.
-
-## Changes for node operators
-
-Please read this section before upgrading.
-
-Starting with v0.10.0, JSON-RPC authentication is enabled by default. The RPC interface gives access to the node and its wallet, and leaving it open was not a reasonable default.
-
-Local clients running under the same user can use cookie authentication without extra configuration. External clients will need credentials. Username and password authentication is supported, including configurations with multiple users. If you have scripts or applications that talk to Floresta over RPC from another user or machine, check that they are configured before you upgrade.
-
-Floresta now writes logs to `debug.log` in the network-specific data directory by default. You can change the location with `--log-file`, or turn file logging off with `--no-log-file`.
-
-We have also introduced options to disable individual services:
-
-- `--disable-rpc`
-- `--disable-electrum`
-- `--disable-zmq` (when built with ZMQ support)
-
-This is useful when Floresta is embedded in another application, or when you simply do not need a given service. Keep in mind that disabling Electrum also stops the watch-only wallet from receiving new blocks. If you enable it again later, you can use `rescan` to catch up.
 
 ## Bitcoin Core RPC compatibility
 
