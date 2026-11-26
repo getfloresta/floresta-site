@@ -7,9 +7,9 @@ image: "/images/blog/v0-10-0-release.png"
 excerpt: "This release adds SwiftSync support, strengthens consensus validation and expands compatibility with Bitcoin Core’s RPC interface. It also changes a few defaults that node operators should review before upgrading."
 ---
 
-Floresta v0.10.0 is out!
+We’ve released Floresta v0.10.0!
 
-This release adds SwiftSync support, strengthens consensus validation and expands compatibility with Bitcoin Core’s RPC interface. It also changes a few defaults that node operators should review before upgrading.
+This release adds SwiftSync to speed up initial synchronization, strengthens consensus validation and expands compatibility with Bitcoin Core’s RPC interface. It also changes a few defaults that node operators should review before upgrading.
 
 ## Changes for node operators
 
@@ -27,17 +27,17 @@ We have also introduced options to disable individual services:
 - `--disable-electrum`
 - `--disable-zmq` (when built with ZMQ support)
 
-This is useful when Floresta is embedded in another application, or when you simply do not need a given service. Keep in mind that disabling Electrum also stops the watch-only wallet from receiving new blocks. If you enable it again later, you can use `rescan` to catch up.
+This is useful when Floresta is embedded in another application, or when you simply do not need a given service. Keep in mind that disabling Electrum also stops the watch-only wallet from receiving new blocks. If you enable it again later, you can use [rescanblockchain](https://github.com/getfloresta/Floresta/blob/v0.10.0/doc/rpc/rescanblockchain.md) to catch up.
 
 ## SwiftSync and Utreexo
 
-[SwiftSync](https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd) is a proposed method for speeding up Bitcoin's initial block download (IBD). The node starts from a hints file that tells it which outputs will still be unspent at a given block height. Outputs that are created and spent within that range do not need to be stored and looked up one by one. Instead, they are accounted for in an aggregate that must equal zero when synchronization reaches the end of the range. The hints do not need to be trusted, since incorrect hints cause validation to fail.
+[SwiftSync](https://gist.github.com/RubenSomsen/a61a37d14182ccd78760e477c78133cd) is a proposed method for speeding up Bitcoin's initial block download (IBD). It uses a hints file that marks which outputs are expected to remain unspent at a given block height. For outputs created and spent within the sync range, the node can skip storing and looking up each one individually. Instead, it checks that those creations and spends cancel out in aggregate. If they don’t, validation fails. This lets the node use hints without trusting whoever produced the file.
 
 This fits well with Utreexo. A Utreexo node does not need to store the full UTXO set locally, but it still has to build its accumulator, and with SwiftSync only the outputs that survive need to be added to it. With v0.10.0, Floresta supports SwiftSync with Utreexo accumulator construction.
 
 SwiftSync is used only when a suitable hints file is provided. Without one, the node follows the regular synchronization process, so nothing changes for operators who do not opt in.
 
-We still have a lot to learn about what this combination offers in practice, in terms of synchronization time, storage and computational requirements, especially on modest hardware. Measurements from different machines would help us a lot here. But preliminary results show promising timings, with our current record standing at 19m 45s using a 5Gbps network.
+We still have a lot to learn about what this combination offers in practice, in terms of synchronization time, storage and computational requirements, especially on modest hardware. Measurements from different machines would help us a lot here. But preliminary results show promising timings, with our current record standing at 19m 45s using a 5Gbps network. If you want to give it a try and share your results, check out [this documentation](https://github.com/getfloresta/Floresta/blob/v0.10.0/doc/run.md#swift-sync).
 
 We have also updated the assume-utreexo checkpoints for mainnet and signet. The new mainnet checkpoint is at block 976,679.
 
