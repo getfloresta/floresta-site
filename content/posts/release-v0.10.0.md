@@ -37,7 +37,7 @@ This fits well with Utreexo. A Utreexo node does not need to store the full UTXO
 
 SwiftSync is used only when a suitable hints file is provided. Without one, the node follows the regular synchronization process, so nothing changes for operators who do not opt in.
 
-We still have a lot to learn about what this combination offers in practice, in terms of synchronization time, storage and computational requirements, especially on modest hardware. Measurements from different machines would help us a lot here. But preliminary results show promising timings, with our current record standing at 19m 45s using a 5Gbps network. If you want to give it a try and share your results, check out [this documentation](https://github.com/getfloresta/Floresta/blob/v0.10.0/doc/run.md#swift-sync).
+In our fastest run so far, Floresta synced from genesis to block 968245 in 19 minutes and 45 seconds using SwiftSync on a AMD Epyc, 32 vCPU and 60GB of RAM with a 5 Gbps connection. We’d like to understand how sync time, disk usage, and CPU and memory requirements vary across setups, especially on modest hardware. If you try it, share how long the sync took, what block height you reached, and what hardware and connection you used. If you measured disk, CPU, or memory usage, we’d love to see those numbers too. If you want to give it a try and share your results, check out [this documentation](https://github.com/getfloresta/Floresta/blob/v0.10.0/doc/run.md#swift-sync)
 
 We have also updated the assume-utreexo checkpoints for mainnet and signet. The new mainnet checkpoint is at block 976,679.
 
